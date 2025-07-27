@@ -166,16 +166,32 @@ const Projects = () => {
                     </div>
                     
                     {/* Action Buttons */}
-                    <div className="flex flex-wrap gap-4 mb-6">
-                      <button className={`flex items-center gap-2 px-6 py-3 bg-gradient-to-r ${project.headerColor} text-white rounded-xl hover:shadow-lg transition-all duration-200 font-medium hover:scale-105 transform`}>
-                        <ArrowTopRightOnSquareIcon className="h-5 w-5" />
-                        View Project
-                      </button>
-                      <button className="flex items-center gap-2 px-6 py-3 border border-slate-300 text-slate-700 rounded-xl hover:border-blue-600 hover:text-blue-600 hover:bg-blue-50 transition-all duration-200 font-medium hover:scale-105 transform">
-                        <CodeBracketIcon className="h-5 w-5" />
-                        View Code
-                      </button>
-                    </div>
+                 {/* Action Buttons */}
+<div className="flex flex-wrap gap-4 mb-6">
+  {project.title === "SkillSwap" ? (
+    <a
+      href="https://skillswapplat.netlify.app/"
+      target="_blank"
+      rel="noopener noreferrer"
+      className={`flex items-center gap-2 px-6 py-3 bg-gradient-to-r ${project.headerColor} text-white rounded-xl hover:shadow-lg transition-all duration-200 font-medium hover:scale-105 transform`}
+    >
+      <ArrowTopRightOnSquareIcon className="h-5 w-5" />
+      View Project
+    </a>
+  ) : (
+    <button
+      disabled
+      className={`flex items-center gap-2 px-6 py-3 bg-gradient-to-r ${project.headerColor} text-white rounded-xl opacity-60 cursor-not-allowed`}
+      title="Project is currently hosted locally for internal testing"
+    >
+      <ArrowTopRightOnSquareIcon className="h-5 w-5" />
+      View Project (Coming Soon)
+    </button>
+  )}
+
+
+</div>
+
 
                     {/* Status Badge */}
                     <div className="inline-flex items-center gap-2 px-4 py-2 bg-green-50 border border-green-200 rounded-xl">
