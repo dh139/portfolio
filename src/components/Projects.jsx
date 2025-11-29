@@ -57,7 +57,8 @@ const Projects = () => {
       icon: RocketLaunchIcon,
       headerColor: "from-blue-600 to-indigo-600",
       accentColor: "blue",
-      category: "MERN Stack Development"
+      category: "MERN Stack Development",
+      url: "https://skillswapplat.netlify.app/"
     },
     {
       title: "Blood Test Booking Bot",
@@ -84,7 +85,65 @@ const Projects = () => {
       headerColor: "from-green-600 to-emerald-600",
       accentColor: "green",
       category: "Automation & Integration"
-    }
+    },
+    {
+      title: "GS Community App",
+      description: "A full-featured MERN stack community platform where members can view profiles, explore family trees, and connect with each other.",
+      longDescription: "This community-driven application is designed for members of GS Community. It includes user authentication, family tree visualization, profile management, admin controls, image uploads, and a fast UI built with Vite + React. Backend uses Node.js/Express with MongoDB for secure data flow.",
+      tech: [
+        { name: "React.js", icon: "⚛️", color: "from-blue-500 to-cyan-500", bgColor: "bg-blue-50", textColor: "text-blue-700" },
+        { name: "Node.js", icon: "🟢", color: "from-green-500 to-emerald-500", bgColor: "bg-green-50", textColor: "text-green-700" },
+        { name: "Express.js", icon: "🚀", color: "from-slate-500 to-gray-600", bgColor: "bg-slate-50", textColor: "text-slate-700" },
+        { name: "MongoDB", icon: "🍃", color: "from-green-500 to-lime-500", bgColor: "bg-green-50", textColor: "text-green-700" },
+        { name: "Tailwind CSS", icon: "💨", color: "from-cyan-500 to-teal-500", bgColor: "bg-cyan-50", textColor: "text-cyan-700" },
+        { name: "JWT Auth", icon: "🔐", color: "from-emerald-500 to-teal-500", bgColor: "bg-emerald-50", textColor: "text-emerald-700" }
+      ],
+      features: [
+        "User registration & authentication",
+        "Profile viewing & searching",
+        "Family tree management system",
+        "Admin panel for managing users & families",
+        "Image upload with cloud storage",
+        "Optimized Vite + React UI",
+        "Responsive mobile-friendly layout"
+      ],
+      type: "Full-Stack Web Application",
+      status: "Completed",
+      icon: DevicePhoneMobileIcon,
+      headerColor: "from-purple-600 to-indigo-600",
+      accentColor: "purple",
+      category: "MERN Stack Development",
+      url: "https://gs-comminity.vercel.app/"
+    },
+    {
+  title: "Expense Management App",
+  description: "A full-featured MERN stack application to manage personal and organizational expenses, featuring user authentication, expense tracking, and analytics.",
+  longDescription: "Expense Management App allows users to submit, approve, and track expenses efficiently. Admins can manage users, review submitted expenses, and generate insights through dashboards. Built with Node.js/Express, MongoDB, and a responsive React + Tailwind frontend.",
+  tech: [
+    { name: "React.js", icon: "⚛️", color: "from-blue-500 to-cyan-500", bgColor: "bg-blue-50", textColor: "text-blue-700" },
+    { name: "Node.js", icon: "🟢", color: "from-green-500 to-emerald-500", bgColor: "bg-green-50", textColor: "text-green-700" },
+    { name: "Express.js", icon: "🚀", color: "from-slate-500 to-gray-600", bgColor: "bg-slate-50", textColor: "text-slate-700" },
+    { name: "MongoDB", icon: "🍃", color: "from-green-500 to-lime-500", bgColor: "bg-green-50", textColor: "text-green-700" },
+    { name: "Tailwind CSS", icon: "💨", color: "from-cyan-500 to-teal-500", bgColor: "bg-cyan-50", textColor: "text-cyan-700" },
+    { name: "JWT Auth", icon: "🔐", color: "from-emerald-500 to-teal-500", bgColor: "bg-emerald-50", textColor: "text-emerald-700" }
+  ],
+  features: [
+    "User registration & authentication",
+    "Submit, approve, and track expenses",
+    "Admin dashboard with user and expense management",
+    "Detailed analytics and reporting",
+    "Responsive UI with Tailwind CSS",
+    "Cloud-based backend with Node.js & MongoDB"
+  ],
+  type: "Full-Stack Web Application",
+  status: "Completed",
+  icon: DevicePhoneMobileIcon,
+  headerColor: "from-purple-600 to-indigo-600",
+  accentColor: "purple",
+  category: "MERN Stack Development",
+  url: "https://expense01.vercel.app/"
+}
+
   ]
 
   return (
@@ -166,32 +225,28 @@ const Projects = () => {
                     </div>
                     
                     {/* Action Buttons */}
-                 {/* Action Buttons */}
-<div className="flex flex-wrap gap-4 mb-6">
-  {project.title === "SkillSwap" ? (
-    <a
-      href="https://skillswapplat.netlify.app/"
-      target="_blank"
-      rel="noopener noreferrer"
-      className={`flex items-center gap-2 px-6 py-3 bg-gradient-to-r ${project.headerColor} text-white rounded-xl hover:shadow-lg transition-all duration-200 font-medium hover:scale-105 transform`}
-    >
-      <ArrowTopRightOnSquareIcon className="h-5 w-5" />
-      View Project
-    </a>
-  ) : (
-    <button
-      disabled
-      className={`flex items-center gap-2 px-6 py-3 bg-gradient-to-r ${project.headerColor} text-white rounded-xl opacity-60 cursor-not-allowed`}
-      title="Project is currently hosted locally for internal testing"
-    >
-      <ArrowTopRightOnSquareIcon className="h-5 w-5" />
-      View Project (Coming Soon)
-    </button>
-  )}
-
-
-</div>
-
+                    <div className="flex flex-wrap gap-4 mb-6">
+                      {project.url ? (
+                        <a
+                          href={project.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className={`flex items-center gap-2 px-6 py-3 bg-gradient-to-r ${project.headerColor} text-white rounded-xl hover:shadow-lg transition-all duration-200 font-medium hover:scale-105 transform`}
+                        >
+                          <ArrowTopRightOnSquareIcon className="h-5 w-5" />
+                          View Project
+                        </a>
+                      ) : (
+                        <button
+                          disabled
+                          className={`flex items-center gap-2 px-6 py-3 bg-gradient-to-r ${project.headerColor} text-white rounded-xl opacity-60 cursor-not-allowed`}
+                          title="Project is currently hosted locally for internal testing"
+                        >
+                          <ArrowTopRightOnSquareIcon className="h-5 w-5" />
+                          View Project (Coming Soon)
+                        </button>
+                      )}
+                    </div>
 
                     {/* Status Badge */}
                     <div className="inline-flex items-center gap-2 px-4 py-2 bg-green-50 border border-green-200 rounded-xl">
