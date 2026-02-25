@@ -146,42 +146,7 @@ const Skills = () => {
           ))}
         </div>
         
-        {/* MERN Stack Spotlight */}
-        <div className="animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
-          <div className="bg-white/80 backdrop-blur-sm p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-slate-100">
-            <div className="text-center mb-8">
-              <div className="flex items-center justify-center gap-3 mb-4">
-                <div className="w-12 h-12 bg-gradient-to-r from-emerald-600 to-cyan-600 rounded-xl flex items-center justify-center">
-                  <RocketLaunchIcon className="h-6 w-6 text-white" />
-                </div>
-                <h3 className="text-2xl font-bold text-slate-800">MERN Stack Mastery</h3>
-              </div>
-              <p className="text-slate-600 max-w-2xl mx-auto leading-relaxed">
-                Specialized in full-stack development using the complete MERN ecosystem for building scalable, modern web applications
-              </p>
-            </div>
-            
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {mernStack.map((tech, index) => (
-                <div
-                  key={index}
-                  className="group text-center p-6 rounded-xl bg-gradient-to-br from-white to-slate-50 hover:from-slate-50 hover:to-white border border-slate-100 hover:border-slate-200 transition-all duration-300 hover:shadow-lg hover:scale-105 transform"
-                >
-                  <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-200">
-                    {tech.icon}
-                  </div>
-                  <h4 className="font-bold text-slate-800 mb-2 group-hover:text-slate-900 transition-colors duration-200">
-                    {tech.name}
-                  </h4>
-                  <p className="text-slate-600 text-sm">
-                    {tech.description}
-                  </p>
-                  <div className={`w-full h-1 bg-gradient-to-r ${tech.color} rounded-full mt-4 opacity-70 group-hover:opacity-100 transition-opacity duration-200`}></div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
+       
 
         {/* Bottom CTA Section */}
         <div className="text-center mt-16 animate-fade-in-up" style={{ animationDelay: '0.8s' }}>
@@ -201,7 +166,7 @@ const Skills = () => {
         </div>
       </div>
 
-      <style jsx>{`
+      <style>{`
         @keyframes fade-in-up {
           from {
             opacity: 0;

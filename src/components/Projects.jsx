@@ -4,6 +4,61 @@ import { ArrowTopRightOnSquareIcon, CodeBracketIcon, SparklesIcon, CheckCircleIc
 const Projects = () => {
   const projects = [
     {
+  title: "DreamHome (Web)",
+  description: "A modern real estate web platform where users can explore, list, and manage properties with secure authentication and advanced filtering.",
+  longDescription: "DreamHome Web is a full-stack real estate application that allows users to browse properties, apply filters, view detailed listings, and manage their own property posts. It includes JWT-based authentication, RESTful APIs, and a scalable backend deployed on Render.",
+  tech: [
+    { name: "React.js", icon: "⚛️", color: "from-blue-500 to-cyan-500", bgColor: "bg-blue-50", textColor: "text-blue-700" },
+    { name: "Node.js", icon: "🟢", color: "from-green-500 to-emerald-500", bgColor: "bg-green-50", textColor: "text-green-700" },
+    { name: "Express.js", icon: "🚀", color: "from-slate-500 to-gray-600", bgColor: "bg-slate-50", textColor: "text-slate-700" },
+    { name: "MongoDB", icon: "🍃", color: "from-green-500 to-lime-500", bgColor: "bg-green-50", textColor: "text-green-700" },
+    { name: "JWT Auth", icon: "🔐", color: "from-emerald-500 to-teal-500", bgColor: "bg-emerald-50", textColor: "text-emerald-700" },
+    { name: "Render", icon: "☁️", color: "from-purple-500 to-indigo-500", bgColor: "bg-purple-50", textColor: "text-purple-700" }
+  ],
+  features: [
+    "Advanced property search & filtering",
+    "User authentication & authorization (JWT)",
+    "Add, edit & manage property listings",
+    "REST API integration",
+    "Responsive design",
+    "Backend deployed on Render"
+  ],
+  type: "Full-Stack Web Application",
+  status: "Completed",
+ icon: BuildingOfficeIcon,
+  headerColor: "from-indigo-600 to-blue-600",
+  accentColor: "indigo",
+  category: "Full-Stack Development",
+  url: "https://dream-home-uxjv.vercel.app/"
+},
+{
+  title: "DreamHome (Mobile App)",
+  description: "A cross-platform real estate mobile application built with Flutter, connected to a Node.js backend for seamless property management.",
+  longDescription: "DreamHome Mobile is a Flutter-based real estate app designed for Android users. It connects to a Node.js/Express backend deployed on Render. The app enables users to explore properties, view detailed listings, authenticate securely, and manage their own property postings from mobile devices.",
+  tech: [
+    { name: "Flutter", icon: "📱", color: "from-sky-500 to-blue-500", bgColor: "bg-sky-50", textColor: "text-sky-700" },
+    { name: "Dart", icon: "🎯", color: "from-blue-400 to-indigo-500", bgColor: "bg-blue-50", textColor: "text-blue-700" },
+    { name: "Node.js", icon: "🟢", color: "from-green-500 to-emerald-500", bgColor: "bg-green-50", textColor: "text-green-700" },
+    { name: "Express.js", icon: "🚀", color: "from-slate-500 to-gray-600", bgColor: "bg-slate-50", textColor: "text-slate-700" },
+    { name: "MongoDB", icon: "🍃", color: "from-green-500 to-lime-500", bgColor: "bg-green-50", textColor: "text-green-700" },
+    { name: "REST API", icon: "🔗", color: "from-purple-500 to-indigo-500", bgColor: "bg-purple-50", textColor: "text-purple-700" }
+  ],
+  features: [
+    "Cross-platform Flutter UI",
+    "Real-time property listing fetch",
+    "Secure login & signup",
+    "Add/manage properties from mobile",
+    "API-based architecture",
+    "Clean and responsive mobile design"
+  ],
+  type: "Mobile Application",
+  status: "Completed",
+  icon: BuildingOfficeIcon,
+  headerColor: "from-blue-600 to-sky-600",
+  accentColor: "blue",
+  category: "Mobile App Development"
+},
+    {
       title: "ApnaPG",
       description: "A comprehensive PG accommodation platform built with Laravel, featuring three distinct modules for seamless property management and booking experience.",
       longDescription: "ApnaPG revolutionizes the PG accommodation search and booking process by providing a unified platform for students, property owners, and administrators. The application features advanced filtering capabilities, real-time availability tracking, and secure booking management.",
@@ -312,7 +367,7 @@ const Projects = () => {
         </div>
       </div>
 
-      <style jsx>{`
+      <style >{`
         @keyframes fade-in-up {
           from {
             opacity: 0;
