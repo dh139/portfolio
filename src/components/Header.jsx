@@ -22,31 +22,29 @@ const Header = () => {
   ]
 
   return (
-    <header className="fixed w-full z-50 px-4 sm:px-6 lg:px-8 pt-4">
-      <nav className={`max-w-6xl mx-auto transition-all duration-300 rounded-2xl ${
+    <header className="fixed w-full z-50 px-4 sm:px-6 pt-4 top-0">
+      <nav className={`max-w-6xl mx-auto transition-all duration-300 rounded-full ${
         isScrolled 
-          ? 'bg-white/90 backdrop-blur-md shadow-lg border border-gray-100' 
-          : 'bg-white/80 backdrop-blur-sm shadow-md border border-gray-200'
+          ? 'bg-slate-900/80 backdrop-blur-xl shadow-lg border border-white/10 shadow-indigo-600/10' 
+          : 'bg-transparent border border-transparent'
       }`}>
-        <div className="flex justify-between items-center px-6 py-4">
+        <div className="flex justify-between items-center px-6 py-3">
           {/* Logo */}
           <div className="flex items-center">
-            <div className="w-10 h-10 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl flex items-center justify-center mr-3">
-              <span className="text-white font-bold text-lg">DG</span>
-            </div>
-            <div className="text-xl font-bold bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent">
+           
+            <div className="text-xl font-display font-bold text-white tracking-wide">
               Dhrumil Gajjar
             </div>
           </div>
 
-          {/* Desktop Navigation - This should be visible on md screens and up */}
-          <div className="hidden md:block">
-            <div className="flex items-center space-x-2 bg-gray-50 p-2 rounded-xl">
+          {/* Desktop Navigation */}
+          <div className="hidden md:block absolute left-1/2 -translate-x-1/2">
+            <div className="flex items-center gap-1 bg-white/5 p-1.5 rounded-full border border-white/5 backdrop-blur-md">
               {navItems.map((item) => (
                 <a
                   key={item.name}
                   href={item.href}
-                  className="px-4 py-2 text-gray-700 hover:text-blue-600 hover:bg-white rounded-lg transition-all duration-200 font-medium text-sm"
+                  className="px-5 py-2 text-slate-300 hover:text-white hover:bg-white/10 rounded-full transition-all duration-300 font-medium text-sm"
                 >
                   {item.name}
                 </a>
@@ -58,7 +56,7 @@ const Header = () => {
           <div className="hidden md:block">
             <a
               href="#contact"
-              className="px-6 py-2.5 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-xl hover:from-blue-700 hover:to-indigo-700 transition-all duration-200 font-medium text-sm shadow-md hover:shadow-lg transform hover:-translate-y-0.5"
+              className="px-6 py-2.5 bg-white text-slate-950 rounded-full hover:bg-slate-200 transition-all duration-300 font-semibold text-sm shadow-md"
             >
               Let's Talk
             </a>
@@ -66,35 +64,35 @@ const Header = () => {
 
           {/* Mobile menu button */}
           <button
-            className="md:hidden p-2 rounded-xl hover:bg-gray-100 transition-colors duration-200"
+            className="md:hidden p-2 rounded-full hover:bg-white/10 transition-colors duration-200"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             {isMenuOpen ? (
-              <XMarkIcon className="h-6 w-6 text-gray-700" />
+              <XMarkIcon className="h-6 w-6 text-white" />
             ) : (
-              <Bars3Icon className="h-6 w-6 text-gray-700" />
+              <Bars3Icon className="h-6 w-6 text-white" />
             )}
           </button>
         </div>
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden border-t border-gray-100">
-            <div className="px-6 py-4 space-y-2">
+          <div className="md:hidden border-t border-white/10 mt-2 rounded-b-2xl bg-slate-900/95 backdrop-blur-xl">
+            <div className="px-4 py-4 space-y-2">
               {navItems.map((item) => (
                 <a
                   key={item.name}
                   href={item.href}
-                  className="block px-4 py-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-xl transition-all duration-200 font-medium"
+                  className="block px-4 py-3 text-slate-300 hover:text-white hover:bg-white/10 rounded-xl transition-all duration-200 font-medium"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.name}
                 </a>
               ))}
-              <div className="pt-4 border-t border-gray-100">
+              <div className="pt-4 border-t border-white/10 mt-2">
                 <a
                   href="#contact"
-                  className="block px-4 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white text-center rounded-xl hover:from-blue-700 hover:to-indigo-700 transition-all duration-200 font-medium"
+                  className="block px-4 py-3 bg-indigo-600 text-white text-center rounded-xl hover:bg-indigo-500 transition-all duration-200 font-medium"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Let's Talk
