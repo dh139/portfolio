@@ -155,7 +155,25 @@ const Header = () => {
                           ? 'bg-stone-900 text-white font-extrabold' 
                           : 'text-stone-400 hover:text-white hover:bg-stone-900/50'
                       }`}
-                      onClick={() => setIsMenuOpen(false)}
+                      onClick={(e) => {
+                        const targetId = item.href.slice(1);
+                        const targetEl = document.getElementById(targetId);
+                        setIsMenuOpen(false);
+
+                        if (targetEl) {
+                          e.preventDefault();
+                          setTimeout(() => {
+                            const offset = 85; // perfect offset to account for floating navbar height
+                            const elementPosition = targetEl.getBoundingClientRect().top + window.scrollY;
+                            const offsetPosition = elementPosition - offset;
+
+                            window.scrollTo({
+                              top: offsetPosition,
+                              behavior: 'smooth'
+                            });
+                          }, 150); // wait for mobile menu collapse to begin and release layout locks
+                        }
+                      }}
                     >
                       {item.name}
                     </a>
@@ -165,7 +183,24 @@ const Header = () => {
                   <a
                     href="#contact"
                     className="block px-4 py-3 bg-white hover:bg-stone-100 text-stone-950 text-center rounded-2xl font-bold tracking-wider uppercase text-[10px] hover:shadow-xs"
-                    onClick={() => setIsMenuOpen(false)}
+                    onClick={(e) => {
+                      const targetEl = document.getElementById('contact');
+                      setIsMenuOpen(false);
+
+                      if (targetEl) {
+                        e.preventDefault();
+                        setTimeout(() => {
+                          const offset = 85;
+                          const elementPosition = targetEl.getBoundingClientRect().top + window.scrollY;
+                          const offsetPosition = elementPosition - offset;
+
+                          window.scrollTo({
+                            top: offsetPosition,
+                            behavior: 'smooth'
+                          });
+                        }, 150);
+                      }
+                    }}
                   >
                     Let's Talk
                   </a>

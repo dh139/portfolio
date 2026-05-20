@@ -10,7 +10,7 @@ import Footer from './components/Footer'
 
 function App() {
   return (
-    <div className="min-h-screen bg-white text-slate-800 font-sans selection:bg-slate-200 overflow-x-hidden relative">
+    <div className="min-h-screen bg-[#FBFBFA] text-stone-800 font-sans selection:bg-stone-200/80 overflow-x-hidden relative">
       <div className="relative z-10">
         <Header />
         <main>
