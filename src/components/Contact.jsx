@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { EnvelopeIcon, PhoneIcon, MapPinIcon, PaperAirplaneIcon, CheckCircleIcon, ExclamationCircleIcon, SparklesIcon } from '@heroicons/react/24/outline'
+import { EnvelopeIcon, PaperAirplaneIcon, CheckCircleIcon, ExclamationCircleIcon } from '@heroicons/react/24/outline'
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -23,10 +23,7 @@ const Contact = () => {
     setIsLoading(true)
     setSubmitStatus(null)
 
-    // Using EmailJS to send email directly to Gmail
     try {
-      // You need to install EmailJS: npm install @emailjs/browser
-      // And set up your EmailJS account with service ID, template ID, and public key
       const emailjs = await import('@emailjs/browser')
       
       const templateParams = {
@@ -38,10 +35,10 @@ const Contact = () => {
       }
 
       await emailjs.send(
-        'service_j2gr0d8', // Replace with your EmailJS service ID
-        'template_qxz5mkq', // Replace with your EmailJS template ID
+        'service_j2gr0d8', // EmailJS service ID
+        'template_qxz5mkq', // EmailJS template ID
         templateParams,
-        'TGlogZd6dtFKkLeqn' // Replace with your EmailJS public key
+        'TGlogZd6dtFKkLeqn' // EmailJS public key
       )
 
       setSubmitStatus('success')
@@ -57,11 +54,9 @@ const Contact = () => {
   const contactInfo = [
     {
       icon: EnvelopeIcon,
-      title: "Email",
+      title: "Email Me",
       value: "gajjardhrumil264@gmail.com",
       action: () => window.open('mailto:gajjardhrumil264@gmail.com'),
-      bgColor: "bg-indigo-500/10",
-      iconColor: "text-indigo-400",
       isClickable: true
     },
   ]
@@ -69,97 +64,86 @@ const Contact = () => {
   const socialLinks = [
     {
       name: "GitHub",
-      url: "https://github.com/dh139", // Replace with your GitHub username
-      icon: (
-        <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-          <path fillRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clipRule="evenodd" />
-        </svg>
-      ),
-      color: "bg-white/10 hover:bg-white/20 border border-white/10"
+      url: "https://github.com/dh139",
+      icon: <i className="fa-brands fa-github text-xl"></i>
     },
+    {
+      name: "LinkedIn",
+      url: "https://www.linkedin.com/in/dhrumil-gajjar/",
+      icon: <i className="fa-brands fa-linkedin-in text-xl"></i>
+    }
   ]
 
   return (
-    <section id="contact" className="py-20 bg-slate-950 relative overflow-hidden flex flex-col justify-center">
-      {/* Background decorative elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-20 right-20 w-64 h-64 bg-indigo-500/10 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 left-20 w-64 h-64 bg-purple-500/10 rounded-full blur-3xl"></div>
-      </div>
-
+    <section id="contact" className="py-32 relative overflow-hidden bg-transparent border-t border-stone-200/50 flex flex-col justify-center">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
         {/* Section Header */}
-        <div className="text-center mb-16 animate-fade-in-up">
+        <div className="text-center mb-20">
           <div className="flex items-center justify-center gap-2 mb-4">
-            <PaperAirplaneIcon className="h-6 w-6 text-indigo-400" />
-            <span className="text-indigo-400 font-semibold text-sm uppercase tracking-wider">Contact</span>
+            <span className="text-stone-400 font-bold text-xs uppercase tracking-widest">Get In Touch</span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-slate-200 to-white bg-clip-text text-transparent mb-6">
-            Get In Touch
+          <h2 className="text-4xl md:text-6xl font-display font-bold tracking-tight text-stone-950 mb-6 font-serif italic">
+            Let's Create Together
           </h2>
-          <p className="text-xl text-slate-400 max-w-3xl mx-auto leading-relaxed">
-            Ready to collaborate on your next project? Let's discuss how we can work together to bring your ideas to life
+          <p className="text-lg md:text-xl text-stone-500 max-w-2xl mx-auto leading-relaxed font-light">
+            Ready to collaborate on your next project? Drop a message and let's turn your grand vision into clean, high-performance code.
           </p>
         </div>
         
-        <div className="flex items-center justify-center mb-20">
-          {/* Contact Information Card */}
-          <div className="animate-fade-in-up w-full max-w-2xl" style={{ animationDelay: '0.2s' }}>
-            <div className="bg-slate-900/60 backdrop-blur-xl p-8 rounded-3xl shadow-2xl border border-white/5 hover:border-white/10 transition-all duration-300">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-12 h-12 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-xl flex items-center justify-center">
-                  <SparklesIcon className="h-6 w-6 text-white" />
+        <div className="grid lg:grid-cols-12 gap-8 items-stretch">
+          {/* Left Column: Contact Information */}
+          <div className="lg:col-span-5 flex">
+            <div className="glass-panel-neon w-full h-full p-8 sm:p-10 rounded-3xl flex flex-col justify-between border border-stone-200 hover:border-stone-300 transition-all duration-300">
+              <div>
+                <h3 className="text-2xl sm:text-3xl font-display font-bold text-stone-950 tracking-tight mb-6">
+                  Connect With Me
+                </h3>
+                
+                <div className="space-y-6 text-stone-600 leading-relaxed font-light text-base mb-8">
+                  <p>
+                    I'm always looking forward to innovative, challenging opportunities, whether it's building a 
+                    <span className="font-semibold text-stone-950"> MERN stack application</span>, 
+                    setting up custom <span className="font-semibold text-stone-950"> bot automation</span>, 
+                    or crafting pristine backends in <span className="font-semibold text-stone-950">Laravel & PHP</span>.
+                  </p>
+                  <p>
+                    Let's schedule a chat to map out your system architecture, optimize user flow, and design an unmatched user experience.
+                  </p>
                 </div>
-                <h3 className="text-2xl font-bold text-white">Let's Connect</h3>
-              </div>
               
-              <div className="space-y-6 text-slate-300 leading-relaxed mb-8">
-                <p>
-                  I'm always interested in hearing about new opportunities, whether it's a 
-                  <span className="font-semibold text-indigo-400"> full-stack web application</span>, 
-                  <span className="font-semibold text-emerald-400"> bot automation project</span>, 
-                  or any innovative idea you'd like to bring to life.
-                </p>
-                <p>
-                  Let's discuss your project requirements and explore how my expertise in 
-                  <span className="font-semibold text-purple-400"> MERN stack</span>, 
-                  <span className="font-semibold text-orange-400"> Laravel</span>, and 
-                  <span className="font-semibold text-pink-400"> API integrations</span> can help achieve your goals.
-                </p>
-              </div>
-            
-              {/* Contact Information */}
-              <div className="space-y-4 mb-8">
-                {contactInfo.map((info, index) => (
-                  <div 
-                    key={index}
-                    className={`group flex items-center gap-4 p-4 rounded-2xl bg-white/5 border border-white/5 transition-all duration-300 ${info.isClickable ? 'cursor-pointer hover:bg-white/10 hover:border-white/10 hover:shadow-md' : ''}`}
-                    onClick={info.action}
-                  >
-                    <div className={`w-12 h-12 ${info.bgColor} rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-200`}>
-                      <info.icon className={`h-6 w-6 ${info.iconColor}`} />
+                {/* Contact Methods */}
+                <div className="space-y-4 mb-8">
+                  {contactInfo.map((info, index) => (
+                    <div 
+                      key={index}
+                      className={`group flex items-center gap-4 p-5 rounded-2xl bg-white border border-stone-200/60 transition-all duration-300 ${info.isClickable ? 'cursor-pointer hover:bg-stone-50 hover:border-stone-300' : ''}`}
+                      onClick={info.action}
+                    >
+                      <div className="w-12 h-12 bg-stone-100 rounded-xl flex items-center justify-center group-hover:scale-105 transition-transform duration-300 flex-shrink-0">
+                        <info.icon className="h-5 w-5 text-stone-800" />
+                      </div>
+                      <div>
+                        <p className="font-bold text-stone-900 mb-1">{info.title}</p>
+                        <p className="text-stone-500 text-sm group-hover:text-black transition-colors duration-300">
+                          {info.value}
+                        </p>
+                      </div>
                     </div>
-                    <div>
-                      <p className="font-semibold text-white mb-1">{info.title}</p>
-                      <p className={`text-slate-400 transition-colors ${info.isClickable ? 'group-hover:text-indigo-400' : ''}`}>
-                        {info.value}
-                      </p>
-                    </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
 
-              {/* Social Links */}
-              <div className="pt-6 border-t border-white/10">
-                <h4 className="font-semibold text-white mb-4">Connect on Social</h4>
+              {/* Social Channels */}
+              <div className="pt-8 border-t border-stone-200/60">
+                <h4 className="font-semibold tracking-wider text-xs uppercase text-stone-400 mb-4">Connect on Social</h4>
                 <div className="flex gap-4">
                   {socialLinks.map((social, index) => (
-                     <a
+                    <a
                       key={index}
                       href={social.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className={`w-12 h-12 ${social.color} text-white rounded-xl flex items-center justify-center transition-all duration-200 hover:scale-110 hover:shadow-lg`}
+                      className="w-12 h-12 rounded-xl bg-white border border-stone-200 text-stone-600 hover:text-black hover:bg-stone-50 hover:border-stone-300 flex items-center justify-center transition-all duration-300 hover:scale-115 hover:shadow-xs"
                       title={social.name}
                     >
                       {social.icon}
@@ -167,6 +151,120 @@ const Contact = () => {
                   ))}
                 </div>
               </div>
+            </div>
+          </div>
+
+          {/* Right Column: Custom Message Form */}
+          <div className="lg:col-span-7 flex">
+            <div className="glass-panel-neon w-full h-full p-8 sm:p-10 rounded-3xl border border-stone-200 hover:border-stone-300 transition-all duration-300">
+              <h3 className="text-2xl sm:text-3xl font-display font-bold text-stone-950 tracking-tight mb-6">
+                Send A Message
+              </h3>
+
+              <form onSubmit={handleSubmit} className="space-y-6">
+                {/* Name Input */}
+                <div className="space-y-2">
+                  <label htmlFor="name" className="text-xs font-bold uppercase tracking-wider text-stone-500">
+                    Your Name
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    required
+                    value={formData.name}
+                    onChange={handleChange}
+                    placeholder="e.g. John Doe"
+                    className="w-full px-5 py-4 bg-white border border-stone-200 focus:border-stone-800 rounded-2xl text-stone-900 placeholder-stone-400 focus:outline-none focus:ring-1 focus:ring-stone-800/10 transition-all duration-300 hover:border-stone-300"
+                  />
+                </div>
+
+                {/* Email Input */}
+                <div className="space-y-2">
+                  <label htmlFor="email" className="text-xs font-bold uppercase tracking-wider text-stone-500">
+                    Email Address
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    required
+                    value={formData.email}
+                    onChange={handleChange}
+                    placeholder="e.g. john@example.com"
+                    className="w-full px-5 py-4 bg-white border border-stone-200 focus:border-stone-800 rounded-2xl text-stone-900 placeholder-stone-400 focus:outline-none focus:ring-1 focus:ring-stone-800/10 transition-all duration-300 hover:border-stone-300"
+                  />
+                </div>
+
+                {/* Subject Input */}
+                <div className="space-y-2">
+                  <label htmlFor="subject" className="text-xs font-bold uppercase tracking-wider text-stone-500">
+                    Subject
+                  </label>
+                  <input
+                    type="text"
+                    id="subject"
+                    required
+                    value={formData.subject}
+                    onChange={handleChange}
+                    placeholder="How can I help you?"
+                    className="w-full px-5 py-4 bg-white border border-stone-200 focus:border-stone-800 rounded-2xl text-stone-900 placeholder-stone-400 focus:outline-none focus:ring-1 focus:ring-stone-800/10 transition-all duration-300 hover:border-stone-300"
+                  />
+                </div>
+
+                {/* Message Input */}
+                <div className="space-y-2">
+                  <label htmlFor="message" className="text-xs font-bold uppercase tracking-wider text-stone-500">
+                    Message
+                  </label>
+                  <textarea
+                    id="message"
+                    required
+                    rows="4"
+                    value={formData.message}
+                    onChange={handleChange}
+                    placeholder="Tell me about your project..."
+                    className="w-full px-5 py-4 bg-white border border-stone-200 focus:border-stone-800 rounded-2xl text-stone-900 placeholder-stone-400 focus:outline-none focus:ring-1 focus:ring-stone-800/10 transition-all duration-300 hover:border-stone-300 resize-none"
+                  />
+                </div>
+
+                {/* Status Alerts */}
+                {submitStatus === 'success' && (
+                  <div className="flex items-center gap-3 p-4 bg-emerald-50 border border-emerald-200 text-emerald-800 rounded-2xl text-sm animate-fade-in">
+                    <CheckCircleIcon className="h-5 w-5 flex-shrink-0 text-emerald-700" />
+                    <span>Thank you! Your message has been sent successfully. I will get back to you shortly.</span>
+                  </div>
+                )}
+
+                {submitStatus === 'error' && (
+                  <div className="flex items-center gap-3 p-4 bg-rose-50 border border-rose-200 text-rose-800 rounded-2xl text-sm animate-fade-in">
+                    <ExclamationCircleIcon className="h-5 w-5 flex-shrink-0 text-rose-700" />
+                    <span>Oops! Something went wrong while sending. Please try again or email me directly.</span>
+                  </div>
+                )}
+
+                {/* Submit Button */}
+                <button
+                  type="submit"
+                  disabled={isLoading}
+                  className="w-full py-4 bg-stone-900 hover:bg-black text-white font-bold uppercase tracking-wider text-xs rounded-2xl active:scale-[0.98] transition-all duration-300 shadow-xs flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  {isLoading ? (
+                    <>
+                      <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" fill="none" viewBox="0 0 24 24">
+                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
+                      </svg>
+                      <span>Sending message...</span>
+                    </>
+                  ) : (
+                    <>
+                      <span>Send Message</span>
+                      <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                      </svg>
+                    </>
+                  )}
+                </button>
+              </form>
             </div>
           </div>
         </div>

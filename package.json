@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build && ls -la dist",
+    "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview"
   },
@@ -19,7 +19,8 @@
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-hot-toast": "^2.6.0",
-    "react-router-dom": "^7.14.0"
+    "react-router-dom": "^7.14.0",
+    "three": "^0.184.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.29.0",

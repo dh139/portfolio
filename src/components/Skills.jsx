@@ -1,129 +1,112 @@
 import React from 'react'
-import { SparklesIcon, CodeBracketIcon, RocketLaunchIcon } from '@heroicons/react/24/outline'
+import { CodeBracketIcon } from '@heroicons/react/24/outline'
 
 const Skills = () => {
   const skillCategories = [
     {
       title: "Frontend Technologies",
-      description: "Modern frontend frameworks and libraries for building dynamic user interfaces",
+      description: "Modern frontend frameworks and libraries for building dynamic, gorgeous interfaces",
       skills: [
-        { name: "React.js", icon: "⚛️", bgColor: "bg-indigo-500/10", textColor: "text-indigo-400" },
-        { name: "JavaScript", icon: "🟨", bgColor: "bg-amber-500/10", textColor: "text-amber-400" },
-        { name: "HTML5", icon: "🟧", bgColor: "bg-orange-500/10", textColor: "text-orange-400" },
-        { name: "CSS3", icon: "🎨", bgColor: "bg-blue-500/10", textColor: "text-blue-400" },
-        { name: "Tailwind CSS", icon: "💨", bgColor: "bg-cyan-500/10", textColor: "text-cyan-400" },
-        { name: "Vite", icon: "⚡", bgColor: "bg-purple-500/10", textColor: "text-purple-400" }
-      ],
-      headerColor: "from-blue-500 to-indigo-500"
+        { name: "React.js", icon: "⚛️" },
+        { name: "JavaScript", icon: "🟨" },
+        { name: "HTML5", icon: "🟧" },
+        { name: "CSS3", icon: "🎨" },
+        { name: "Tailwind CSS", icon: "💨" },
+        { name: "Vite", icon: "⚡" }
+      ]
     },
     {
       title: "Backend & Server",
-      description: "Robust server-side technologies for scalable web applications",
+      description: "Robust server-side technologies for secure, high-performance web applications",
       skills: [
-        { name: "Node.js", icon: "🟢", bgColor: "bg-emerald-500/10", textColor: "text-emerald-400" },
-        { name: "Express.js", icon: "🚀", bgColor: "bg-slate-500/10", textColor: "text-slate-400" },
-        { name: "Laravel", icon: "🔴", bgColor: "bg-red-500/10", textColor: "text-red-400" },
-        { name: "PHP", icon: "🐘", bgColor: "bg-indigo-500/10", textColor: "text-indigo-400" },
-        { name: "JWT Auth", icon: "🔐", bgColor: "bg-teal-500/10", textColor: "text-teal-400" },
-        { name: "RESTful APIs", icon: "🌐", bgColor: "bg-blue-500/10", textColor: "text-blue-400" }
-      ],
-      headerColor: "from-emerald-500 to-teal-500"
+        { name: "Node.js", icon: "🟢" },
+        { name: "Express.js", icon: "🚀" },
+        { name: "Laravel", icon: "🔴" },
+        { name: "PHP", icon: "🐘" },
+        { name: "JWT Auth", icon: "🔐" },
+        { name: "RESTful APIs", icon: "🌐" }
+      ]
     },
     {
       title: "Database Systems",
-      description: "Modern database solutions for efficient data management",
+      description: "Modern structured and unstructured database solutions for efficient data management",
       skills: [
-        { name: "MongoDB", icon: "🍃", bgColor: "bg-green-500/10", textColor: "text-green-400" },
-        { name: "Mongoose", icon: "🦫", bgColor: "bg-amber-500/10", textColor: "text-amber-400" },
-        { name: "MySQL", icon: "🐬", bgColor: "bg-blue-500/10", textColor: "text-blue-400" },
-        { name: "Database Design", icon: "📊", bgColor: "bg-purple-500/10", textColor: "text-purple-400" }
-      ],
-      headerColor: "from-purple-500 to-indigo-500"
+        { name: "MongoDB", icon: "🍃" },
+        { name: "Mongoose", icon: "🦫" },
+        { name: "MySQL", icon: "🐬" },
+        { name: "Database Design", icon: "📊" }
+      ]
     },
     {
       title: "Automation & Bots",
-      description: "Intelligent automation solutions for business process optimization",
+      description: "Intelligent automation scripts and conversational interfaces for workflow optimization",
       skills: [
-        { name: "Telegram Bot", icon: "✈️", bgColor: "bg-cyan-500/10", textColor: "text-cyan-400" },
-        { name: "WhatsApp Bot", icon: "💬", bgColor: "bg-emerald-500/10", textColor: "text-emerald-400" },
-        { name: "Google Sheets API", icon: "📊", bgColor: "bg-teal-500/10", textColor: "text-teal-400" },
-        { name: "QR Generation", icon: "📱", bgColor: "bg-slate-500/10", textColor: "text-slate-400" }
-      ],
-      headerColor: "from-orange-500 to-red-500"
+        { name: "Telegram Bot", icon: "✈️" },
+        { name: "WhatsApp Bot", icon: "💬" },
+        { name: "Google Sheets API", icon: "📊" },
+        { name: "QR Generation", icon: "📱" }
+      ]
     },
     {
-      title: "Tools & Technologies",
-      description: "Development tools and emerging technologies for modern solutions",
+      title: "Tools & Ecosystem",
+      description: "Development workflows, version controls, and secondary research platforms",
       skills: [
-        { name: "Git", icon: "🔗", bgColor: "bg-orange-500/10", textColor: "text-orange-400" },
-        { name: "Flutter", icon: "📱", bgColor: "bg-cyan-500/10", textColor: "text-cyan-400" },
-        { name: "Data Science", icon: "📈", bgColor: "bg-pink-500/10", textColor: "text-pink-400" },
-        { name: "API Integration", icon: "🔌", bgColor: "bg-indigo-500/10", textColor: "text-indigo-400" }
-      ],
-      headerColor: "from-slate-500 to-gray-500"
+        { name: "Git & GitHub", icon: "🔗" },
+        { name: "Flutter", icon: "📱" },
+        { name: "Data Science", icon: "📈" },
+        { name: "API Integration", icon: "🔌" }
+      ]
     }
   ]
 
   return (
-    <section id="skills" className="py-20 bg-slate-950 relative overflow-hidden">
-      {/* Background decorative elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-20 left-20 w-64 h-64 bg-purple-500/10 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 right-20 w-64 h-64 bg-indigo-500/10 rounded-full blur-3xl"></div>
-      </div>
-
+    <section id="skills" className="py-32 relative overflow-hidden bg-transparent border-t border-stone-200/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
-        <div className="text-center mb-16 animate-fade-in-up">
+        <div className="text-center mb-24">
           <div className="flex items-center justify-center gap-2 mb-4">
-            <SparklesIcon className="h-6 w-6 text-purple-400" />
-            <span className="text-purple-400 font-semibold text-sm uppercase tracking-wider">Skills & Technologies</span>
+            <span className="text-stone-400 font-bold text-xs uppercase tracking-widest">Skills & Technologies</span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-slate-200 to-white bg-clip-text text-transparent mb-6">
+          <h2 className="text-4xl md:text-6xl font-display font-bold tracking-tight text-stone-950 mb-6 font-serif italic">
             Technical Expertise
           </h2>
-          <p className="text-xl text-slate-400 max-w-3xl mx-auto leading-relaxed">
-            A comprehensive toolkit of modern technologies and frameworks for building exceptional digital solutions
+          <p className="text-lg md:text-xl text-stone-500 max-w-3xl mx-auto leading-relaxed font-light">
+            A comprehensive toolkit of modern frameworks and languages designed for constructing high-end digital solutions.
           </p>
         </div>
         
         {/* Skills Grid */}
-        <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-8 mb-20">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-24">
           {skillCategories.map((category, index) => (
             <div 
               key={index} 
-              className="group bg-slate-900/60 backdrop-blur-xl p-8 rounded-3xl shadow-2xl border border-white/5 hover:border-white/10 transition-all duration-300 animate-fade-in-up"
-              style={{ animationDelay: `${index * 0.1}s` }}
+              className="glass-panel-neon p-8 rounded-3xl flex flex-col justify-between border border-stone-200 hover:border-stone-300 transition-all duration-300"
             >
-              <div className="flex items-center gap-3 mb-6">
-                <div className={`w-12 h-12 bg-gradient-to-r ${category.headerColor} rounded-xl flex items-center justify-center`}>
-                  <CodeBracketIcon className="h-6 w-6 text-white" />
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold text-white group-hover:text-indigo-400 transition-colors duration-200">
+              <div>
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="w-12 h-12 bg-stone-900 rounded-2xl flex items-center justify-center shadow-xs flex-shrink-0">
+                    <CodeBracketIcon className="h-5 w-5 text-white" />
+                  </div>
+                  <h3 className="text-xl font-display font-bold text-stone-950">
                     {category.title}
                   </h3>
                 </div>
+                
+                <p className="text-stone-500 text-sm mb-8 leading-relaxed font-light">
+                  {category.description}
+                </p>
               </div>
               
-              <p className="text-slate-400 text-sm mb-6 leading-relaxed">
-                {category.description}
-              </p>
-              
-              <div className="space-y-3">
+              <div className="grid grid-cols-2 gap-2.5">
                 {category.skills.map((skill, skillIndex) => (
                   <div
                     key={skillIndex}
-                    className={`group/skill flex items-center gap-3 p-3 rounded-2xl ${skill.bgColor} border border-white/5 hover:bg-white/10 transition-all duration-200 hover:scale-105 transform`}
+                    className="flex items-center gap-2 p-2.5 rounded-xl bg-white border border-stone-200/80 hover:bg-stone-50 hover:border-stone-300 transition-all duration-205"
                   >
-                    <div className="text-2xl group-hover/skill:scale-110 transition-transform duration-200">
-                      {skill.icon}
-                    </div>
-                    <div className="flex-1">
-                      <span className={`font-medium ${skill.textColor} text-sm`}>
-                        {skill.name}
-                      </span>
-                    </div>
+                    <span className="text-lg">{skill.icon}</span>
+                    <span className="font-bold text-stone-700 text-xs tracking-wide">
+                      {skill.name}
+                    </span>
                   </div>
                 ))}
               </div>
@@ -132,18 +115,22 @@ const Skills = () => {
         </div>
 
         {/* Bottom CTA Section */}
-        <div className="text-center mt-16 animate-fade-in-up" style={{ animationDelay: '0.8s' }}>
-          <div className="bg-gradient-to-r from-purple-600 to-indigo-600 p-10 rounded-3xl text-white shadow-2xl border border-white/10">
-            <h3 className="text-3xl font-bold mb-4">Let's Build with These Technologies</h3>
-            <p className="text-purple-100 mb-8 max-w-2xl mx-auto text-lg">
-              Ready to leverage these cutting-edge technologies for your next project? Let's create something extraordinary together.
+        <div className="relative">
+          <div className="bg-stone-900 relative p-8 sm:p-16 rounded-3xl text-center overflow-hidden border border-stone-950 shadow-sm">
+            <h3 className="text-3xl sm:text-4xl font-serif italic font-light mb-4 text-white">
+              Let's build with these technologies
+            </h3>
+            <p className="text-stone-400 mb-8 max-w-2xl mx-auto text-base sm:text-lg font-light">
+              Ready to leverage these cutting-edge technologies for your next web application, mobile app, or automation bot? Let's build something beautiful.
             </p>
             <a
               href="#contact"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-white text-purple-600 rounded-full hover:bg-slate-200 transition-all duration-200 font-bold shadow-lg hover:shadow-xl hover:scale-105 transform"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-white text-stone-900 rounded-full hover:bg-stone-100 transition-all duration-300 font-bold text-xs tracking-wider uppercase shadow-xs hover:scale-102 transform"
             >
               <span>Start Your Project</span>
-              <RocketLaunchIcon className="h-5 w-5" />
+              <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
             </a>
           </div>
         </div>
